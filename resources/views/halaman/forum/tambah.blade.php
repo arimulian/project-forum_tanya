@@ -19,7 +19,7 @@
 <div class="container">
      <h3 class="my-5">Buat Pertanyaan Kepada Publik</h3>
      <div class="my-4">
-          <form action="{{ route('forum.store') }}" method="POST">
+          <form action="{{ route('forum.store') }}" method="POST" enctype="multipart/form-data">
                @csrf
                <div class="form-group">
                     <label class="mb-2" for="question">Pertanyaan</label>

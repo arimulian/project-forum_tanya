@@ -48,12 +48,17 @@ class ForumController extends Controller
             'kategory' => 'required',
             'description' => 'required'
         ]);
-        $validated['user_id'] = auth()->user()->id;
+        $file = $request->file('gambar');
+        $namafile = $file->getClientOriginalName();
+        $tujuanFile = 'asset/question';
+        
+        $file->move($tujuanFile,$namafile);
+
 
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
-        $forum->image = $request->image;
+        $forum->image = $namafile;
         $forum->kategory = $request->kategory;
         $forum->save();
         return redirect('/forum');

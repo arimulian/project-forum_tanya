@@ -36,3 +36,4 @@ Route::get('/profile',[ProfilController::class, 'profile']);
 Route::resource('/forum', ForumController::class);
 // CRUD Forum_Category
 Route::resource('/category', CategoryController::class);
+
