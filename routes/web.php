@@ -31,3 +31,4 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::resource('/forum', ForumController::class);
 // CRUD Forum_Category
 Route::resource('/category', CategoryController::class);
+

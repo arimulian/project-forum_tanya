@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Forum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 
 class ForumController extends Controller
 {
@@ -16,11 +18,10 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forum = Forum::get();
-        return view('halaman.forum.index', [
-            'forum' => $forum,
-            'categories' => Category::all()
-        ]);
+        $forum = DB::table('forums')->latest('id')->paginate(5);
+        return view('halaman.forum.index',compact('forum'));
+            
+        
     }
 
     /**
@@ -28,12 +29,7 @@ class ForumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('halaman.forum.tambah', [
-            'categories' => Category::all()
-        ]);
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -45,16 +41,21 @@ class ForumController extends Controller
     {
         $request->validate([
             'question' => 'required|max:255',
-            'category_id' => 'required',
+            'kategory' => 'required',
             'description' => 'required'
         ]);
+        $file = $request->file('gambar');
+        $namafile = $file->getClientOriginalName();
+        $tujuanFile = 'asset/question';
+        
+        $file->move($tujuanFile,$namafile);
+
 
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
-        $forum->image = $request->image;
-        $forum->category_id = $request->category_id;
-        $forum->user_id = $request->user_id  = auth()->user()->id;
+        $forum->image = $namafile;
+        $forum->kategory = $request->kategory;
         $forum->save();
         return redirect('/forum');
     }
