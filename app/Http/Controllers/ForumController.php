@@ -27,7 +27,14 @@ class ForumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    public function create()
+    {
+        $forum = Forum::get();
+        return view('halaman.forum.tambah', [
+            'forum' => $forum,
+            'categories' => Category::all()
+        ]);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -39,21 +46,20 @@ class ForumController extends Controller
     {
         $request->validate([
             'question' => 'required|max:255',
-            'kategory' => 'required',
+            'category_id' => 'required',
             'description' => 'required'
         ]);
-        $file = $request->file('gambar');
-        $namafile = $file->getClientOriginalName();
-        $tujuanFile = 'asset/question';
+        // $file = $request->file('gambar');
+        // $namafile = $file->getClientOriginalName();
+        // $tujuanFile = 'asset/question';
 
-        $file->move($tujuanFile, $namafile);
-
+        // $file->move($tujuanFile, $namafile);
 
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
-        $forum->image = $namafile;
-        $forum->categories = $request->categories;
+        // $forum->image = $namafile;
+        $forum->category_id = $request->category_id;
         $forum->save();
         return redirect('/forum');
     }

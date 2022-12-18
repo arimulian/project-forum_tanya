@@ -9,7 +9,7 @@ class Forum extends Model
 {
     use HasFactory;
     protected $table = 'forums';
-    protected $fillable = ['question', 'description', 'category', 'image'];
+    protected $guarded = [];
 
     public function category()
     {

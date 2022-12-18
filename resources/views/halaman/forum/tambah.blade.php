@@ -19,7 +19,7 @@
 <div class="container">
      <h3 class="my-5">Buat Pertanyaan Kepada Publik</h3>
      <div class="my-4">
-          <form action="{{ route('forum.store') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('forum.store') }}" method="post" enctype="multipart/form-data">
                @csrf
                <div class="form-group">
                     <label class="mb-2" for="question">Pertanyaan</label>
@@ -39,35 +39,6 @@
                     <trix-editor input="description"></trix-editor>
                </div>
                <div class="form-group my-3">
-<<<<<<< HEAD
-                    <div class="form-check">
-                         <label > 
-                             Kategori :
-                            </label><br>
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault1">
-                         <label class="form-check-label" for="flexRadioDefault1">
-                          Programing
-                         </label>
-                       </div>
-                       <div class="form-check">
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault2" checked>
-                         <label class="form-check-label" for="flexRadioDefault2">
-                         Data Science
-                         </label>
-                       </div>
-                       <div class="form-check">
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault2" checked>
-                         <label class="form-check-label" for="flexRadioDefault2">
-                         Database
-                         </label>
-                       </div>
-                       <div class="form-check">
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault2" checked>
-                         <label class="form-check-label" for="flexRadioDefault2">
-                         Configuration
-                         </label>
-                       </div>
-=======
                     <label class="mb-2" for="category">Tags</label>
                     <select class="form-select " name="category_id">
                          @foreach ($categories as $item)
@@ -78,7 +49,6 @@
                          @endif
                          @endforeach
                     </select>
->>>>>>> 867f9705fe45eec0e5b07c885e5d4e65709182ea
                </div>
                <div class="form-group my-3">
                     <label class="mb-2" for="description">Image</label>
@@ -88,7 +58,7 @@
                     </div>
                </div>
                <button type="submit" class="btn btn-primary mt-4">Submit</button>
-               <a href="/post" class="btn btn-danger mt-4">Back</a>
+               <a href="/forum" class="btn btn-danger mt-4">Back</a>
           </form>
      </div>
 </div>
