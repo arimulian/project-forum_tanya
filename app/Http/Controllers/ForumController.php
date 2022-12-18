@@ -18,10 +18,8 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forum = DB::table('forums')->latest('id')->paginate(5);
-        return view('halaman.forum.index',compact('forum'));
-            
-        
+        $forum = Forum::get();
+        return view('halaman.forum.index', ['forum' => $forum]);
     }
 
     /**
@@ -47,15 +45,15 @@ class ForumController extends Controller
         $file = $request->file('gambar');
         $namafile = $file->getClientOriginalName();
         $tujuanFile = 'asset/question';
-        
-        $file->move($tujuanFile,$namafile);
+
+        $file->move($tujuanFile, $namafile);
 
 
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
         $forum->image = $namafile;
-        $forum->kategory = $request->kategory;
+        $forum->categories = $request->categories;
         $forum->save();
         return redirect('/forum');
     }

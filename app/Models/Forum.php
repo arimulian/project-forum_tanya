@@ -9,7 +9,7 @@ class Forum extends Model
 {
     use HasFactory;
     protected $table = 'forums';
-    protected $fillable = ['question', 'description', 'kategory', 'image'];
+    protected $fillable = ['question', 'description', 'category', 'image'];
 
     public function category()
     {
