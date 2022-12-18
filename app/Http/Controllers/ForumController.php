@@ -45,16 +45,16 @@ class ForumController extends Controller
     {
         $request->validate([
             'question' => 'required|max:255',
-            'category_id' => 'required',
+            'kategory' => 'required',
             'description' => 'required'
         ]);
-        // $validated['user_id'] = auth()->user()->id;
+        $validated['user_id'] = auth()->user()->id;
 
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
         $forum->image = $request->image;
-        $forum->category_id = $request->category_id;
+        $forum->kategory = $request->kategory;
         $forum->save();
         return redirect('/forum');
     }

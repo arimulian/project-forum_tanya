@@ -9,5 +9,5 @@ class Forum extends Model
 {
     use HasFactory;
     protected $table = 'forums';
-    protected $fillable = ['question', 'description', 'category_id'];
+    protected $fillable = ['question', 'description', 'kategory','image'];
 }
