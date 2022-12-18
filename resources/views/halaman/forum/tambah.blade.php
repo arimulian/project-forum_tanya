@@ -41,7 +41,6 @@
                <div class="form-group my-3">
                     <label class="mb-2" for="category">Tags</label>
                     <select class="form-select " name="category_id">
-                         <option class="text-muted" selected>Pilih #Tags Sesuai Kebutuhanmu</option>
                          @foreach ($categories as $item)
                          @if (old('category_id') == $item->id)
                          <option value="{{ $item->id }}" selected>{{ $item->name }}</option>

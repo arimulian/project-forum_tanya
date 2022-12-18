@@ -48,13 +48,13 @@ class ForumController extends Controller
             'category_id' => 'required',
             'description' => 'required'
         ]);
-        // $validated['user_id'] = auth()->user()->id;
 
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
         $forum->image = $request->image;
         $forum->category_id = $request->category_id;
+        $forum->user_id = $request->user_id  = auth()->user()->id;
         $forum->save();
         return redirect('/forum');
     }
