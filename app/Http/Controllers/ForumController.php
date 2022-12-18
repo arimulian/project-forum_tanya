@@ -19,7 +19,7 @@ class ForumController extends Controller
     public function index()
     {
         $forum = DB::table('forums')->latest('id')->paginate(5);
-        return view('halaman.forum.index');
+        return view('halaman.forum.index',compact('forum'));
             
         
     }
@@ -29,6 +29,7 @@ class ForumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
 
     /**
      * Store a newly created resource in storage.
@@ -43,27 +44,18 @@ class ForumController extends Controller
             'kategory' => 'required',
             'description' => 'required'
         ]);
-<<<<<<< HEAD
         $file = $request->file('gambar');
         $namafile = $file->getClientOriginalName();
         $tujuanFile = 'asset/question';
         
         $file->move($tujuanFile,$namafile);
 
-=======
->>>>>>> 867f9705fe45eec0e5b07c885e5d4e65709182ea
 
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
-<<<<<<< HEAD
         $forum->image = $namafile;
         $forum->kategory = $request->kategory;
-=======
-        $forum->image = $request->image;
-        $forum->category_id = $request->category_id;
-        $forum->user_id = $request->user_id  = auth()->user()->id;
->>>>>>> 867f9705fe45eec0e5b07c885e5d4e65709182ea
         $forum->save();
         return redirect('/forum');
     }
