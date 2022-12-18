@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Forum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 
 class ForumController extends Controller
 {
@@ -16,11 +18,10 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forum = Forum::get();
-        return view('halaman.forum.index', [
-            'forum' => $forum,
-            'categories' => Category::all()
-        ]);
+        $forum = DB::table('forums')->latest('id')->paginate(5);
+        return view('halaman.forum.index');
+            
+        
     }
 
     /**
@@ -28,12 +29,6 @@ class ForumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('halaman.forum.tambah', [
-            'categories' => Category::all()
-        ]);
-    }
 
     /**
      * Store a newly created resource in storage.
