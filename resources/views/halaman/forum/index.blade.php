@@ -43,8 +43,13 @@ Halaman Forum
                <div class="card shadow rounded my-4">
                     <div class="card-body">
                          <h4 class="card-title my-4">{{ $item->question }}</h4>
-                         <p class="card-text my-3">{{ $item->description = Str::limit($item, 300, '...') }}</p>
-                         <a href="/forum/{{ $item->id }}" class="align-center badge bg-warning text-decoration-none rounded-pill mt-3">Readmore...</a>
+                         <p class="card-text my-3">{{ $item->description = Str::limit($item, 300, '...') }}
+                              <a href="/forum/{{ $item->id }}" class="align-center badge bg-light text-dark bg-gradient shadow-sm rounded">Readmore...</a>
+                         </p>
+                        
+                         <h5>
+                              <a href="#"><span class="badge bg-info shadow bg-gradient">{{ $item->category->name }}</span></a>
+                         </h5>
                         <div class="my-2">
                          <p class="card-text text-end"><small class="text-muted">Created at {{ $item->created_at }}</small></p>
                          <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" width="30" height="30" class="rounded-circle border float-end mx-2">
