@@ -19,10 +19,17 @@ class LoginController extends Controller
         ]);
         $input = $request->all();
         if(auth()->attempt(array('email'=> $input['email'],'password'=>$input['password']))){
-            return redirect('/home');
+            return redirect('/forum');
         }
 
         return back()->with('loginError', 'Login Filed!')->onlyInput('email');
 
+    }
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        
+        $request->session()->regenerateToken();
+        return redirect('/forum');
     }
 }
