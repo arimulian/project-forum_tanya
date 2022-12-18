@@ -2,6 +2,15 @@
 @section('title')
 Halaman Forum
 @endsection
+@push('script')
+ <script>
+     Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+    </script>
+@endpush
 @section('content')
 <div class="container">
      <div class="row">
@@ -25,15 +34,21 @@ Halaman Forum
                <h1 class="mb-2">Forum</h1>
                <p class="fs-5 mb-4">Tempat Berkomunikasi dengan cara mengajukan pertanyaan atau menjawab sebuah pertanyaan.</p>
                <hr class="mb-5">
-               <div class="card shadow rounded">
+               @foreach ($forum as $item)
+               <div class="card shadow rounded my-4">
                     <div class="card-body">
-                         <h5 class="card-title text-center">Card title</h5>
-                         <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                         <p class="card-text text-end"><small class="text-muted">Last updated 3 mins ago</small></p>
-                         <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" width="32" height="32" class="rounded-circle border float-end mx-2">
+                         <h4 class="card-title my-4">{{ $item->question }}</h4>
+                         <p class="card-text my-3">{{ $item->description = Str::limit($item, 300, '...') }}</p>
+                         <a href="/forum/{{ $item->id }}" class="align-center badge bg-warning text-decoration-none rounded-pill mt-3">Readmore...</a>
+                        <div class="my-2">
+                         <p class="card-text text-end"><small class="text-muted">Created at {{ $item->created_at }}</small></p>
+                         <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" width="30" height="30" class="rounded-circle border float-end mx-2">
                          <p class="card-text text-end"><a class="text-decoration-none" href="#">Username</a></p>
+                        </div>
                     </div>
+                  
                </div>
+               @endforeach
           </div>
           <div class="col-2 my-5">
                <div class="card" style="width: 10rem;">

@@ -35,14 +35,19 @@
                     @error('description')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
-                    <trix-editor input="boddy"></trix-editor>
+                    <input id="description" type="hidden" name="description" value="{{ old('description') }}">
+                    <trix-editor input="description"></trix-editor>
                </div>
                <div class="form-group my-3">
                     <label class="mb-2" for="category">Tags</label>
                     <select class="form-select " name="category_id">
                          <option class="text-muted" selected>Pilih #Tags Sesuai Kebutuhanmu</option>
                          @foreach ($categories as $item)
-                         <option value={{ $item->id }}>{{ $item->name }}</option>
+                         @if (old('category_id') == $item->id)
+                         <option value="{{ $item->id }}" selected>{{ $item->name }}</option>
+                         @else
+                         <option value="{{ $item->id }}">{{ $item->name }}</option>
+                         @endif
                          @endforeach
                     </select>
                </div>
