@@ -48,7 +48,7 @@ Halaman Forum
                          </p>
                         
                          <h5>
-                              <a href="#"><span class="badge bg-info shadow bg-gradient">{{ $item->category->name }}</span></a>
+                              <a href="/category/{{ $item->category->id }}"><span class="badge bg-info shadow bg-gradient">{{ $item->category->name }}</span></a>
                          </h5>
                         <div class="my-2">
                          <p class="card-text text-end"><small class="text-muted">Created at {{ $item->created_at }}</small></p>

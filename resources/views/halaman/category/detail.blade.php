@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title')
-Halaman Tags
+Halaman Detail Kategori
 @endsection
 @section('content')
 <div class="container">
@@ -19,8 +19,8 @@ Halaman Tags
                </ul>
           </div>
           <div class="col-8 my-5">
-               <h1 class="mb-2">Tags</h1>
-               <p class="fs-5">Gunakan tags untuk mengkategorikan pertanyaan kamu dengan pertanyaan yang mirip dengan orang lain.</p>
+               <h2 class="mb-2">{{ $categories->name }}</h2>
+               <p class="text-muted">{{ $categories->description }}</p>
                <div class="input-group mb-5">
                     <input type="text" class="form-control" placeholder="Ketik untuk mencari Tags..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <button type="submit" class="input-group-text btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -30,14 +30,24 @@ Halaman Tags
                <hr>
                <!-- card -->
                <div class="row">
-                    @foreach ($category as $item)
-                    <div class="card ms-4 shadow rounded my-4 " style="width: 14rem;">
+                    @foreach ($categories->forums as $item)
+                    <div class="card shadow rounded my-4">
                          <div class="card-body">
-                              <h6 class="card-title">
-                                   <a class="nav-link active bg-warning bg-gradient btn-sm text-dark  rounded-lg" href="/category/{{$item->id}}">{{ $item->name }}</a>
-                              </h6>
-                              <p class="card-text text-truncate">{{ $item->description }}</p>
+                              <h4 class="card-title my-4">{{ $item->question }}</h4>
+                              <p class="card-text my-3">{{ $item->description}}
+                                   <a href="/forum/{{ $item->id }}" class="align-center badge bg-light text-dark bg-gradient shadow-sm rounded">Readmore...</a>
+                              </p>
+
+                              <h5>
+                                   <a href="#"><span class="badge bg-info shadow bg-gradient">{{ $item->category->name }}</span></a>
+                              </h5>
+                              <div class="my-2">
+                                   <p class="card-text text-end"><small class="text-muted">Created at {{ $item->created_at }}</small></p>
+                                   <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" width="30" height="30" class="rounded-circle border float-end mx-2">
+                                   <p class="card-text text-end"><a class="text-decoration-none" href="#">Username</a></p>
+                              </div>
                          </div>
+
                     </div>
                     @endforeach
                </div>

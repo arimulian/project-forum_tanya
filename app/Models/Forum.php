@@ -10,10 +10,10 @@ class Forum extends Model
 {
     use HasFactory;
     protected $table = 'forums';
-    protected $fillable = ['question', 'description', 'category_id'];
+    protected $fillable = ['question', 'description'];
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }
