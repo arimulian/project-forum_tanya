@@ -12,8 +12,8 @@
                     <li><a href="/forum" class="nav-link px-2 text-secondary">Forum</a></li>
                </ul>
                <div class="text-end">
-                    <button type="button" class="btn btn-outline-warning me-2">Login</button>
-                    <button type="button" class="btn btn-warning">Sign-up</button>
+                    <button type="button" class="btn btn-outline-warning me-2"><a href="/login" style="color:black;text-decoration:none;"> Login</a></button>
+                    <button type="button" class="btn btn-warning"><a href="/register" style="color:black;text-decoration:none;"> Sign-up </a></button>
                </div>
           </div>
      </div>
