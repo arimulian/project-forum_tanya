@@ -30,12 +30,12 @@ Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 //proofile
-Route::get('/profile',[ProfilController::class, 'profile']);
-Route::get('/add-profile',[ProfilController::class,'add']);
+Route::get('/profile', [ProfilController::class, 'profile']);
+Route::get('/add-profile', [ProfilController::class, 'add']);
 
 // CRUD Forum
 Route::resource('/forum', ForumController::class);
 // CRUD Forum_Category
 Route::resource('/category', CategoryController::class);
 
-Route::post('/answer', [AnswerController::class, 'store']);
+Route::post('/answer/{id}', [AnswerController::class, 'store']);
