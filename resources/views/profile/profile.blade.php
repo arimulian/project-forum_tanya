@@ -271,9 +271,7 @@
                  <img src="{{  url('asset/profile/'.$item->image) }}" width="200px" style="border-radius:100px">
                 
                      
-                 @empty
-                     
-                 @endforelse
+                 
                  <p style="text-align: center">{{$item->name}} </p>
                  <br><br> 
                   <a href="#" class="btn btn-warning" style="margin-left:39px"><img src="https://img.icons8.com/sf-regular/48/null/pencil.png" width="20px"/>&nbsp edit profil</a>
@@ -286,7 +284,12 @@
                   <li class="list-group-item px-3">Email &nbsp; : {{$item->alamat}}</li>
                   <li class="list-group-item px-3">Skill &nbsp;&nbsp;&nbsp;&nbsp; : {{$item->skill}}</li>
                 </ul>
-              </div><br><br>
+              </div>
+              @empty
+              <tr colspan="3">
+                <td>No data</td>
+            </tr>    
+             @endforelse<br><br>
             </div>
         </div>
       </div>  
