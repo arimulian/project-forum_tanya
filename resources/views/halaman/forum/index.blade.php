@@ -23,7 +23,7 @@ Halaman Forum
                          <a class="nav-link" href="/category">Tags</a>
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="#">profile</a>
+                         <a class="nav-link" href="/profile">profile</a>
                     </li>
                </ul>
           </div>
@@ -63,9 +63,9 @@ Halaman Forum
           <div class="col-2 my-5">
                <div class="card" style="width: 10rem;">
                     <div class="card-body shadow rounded">
-                         <h5 class="card-title">Card title</h5>
+                         <h5 class="card-title">Selamat Datang di ForumStack</h5>
                          <hr>
-                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <p class="card-text">Mulailah berinteraksi dengan bahasa yang sopan dan ramah</p>
                     </div>
                </div>
           </div>

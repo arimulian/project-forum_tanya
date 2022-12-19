@@ -276,7 +276,7 @@
                  @endforelse
                  <p style="text-align: center">{{$item->name}} </p>
                  <br><br> 
-                  <a href="/edit-profile/{id}" class="btn btn-warning" style="margin-left:39px"><img src="https://img.icons8.com/sf-regular/48/null/pencil.png" width="20px"/>&nbsp edit profil</a>
+                  <a href="#" class="btn btn-warning" style="margin-left:39px"><img src="https://img.icons8.com/sf-regular/48/null/pencil.png" width="20px"/>&nbsp edit profil</a>
 
                 </div>
               </div><br>    
