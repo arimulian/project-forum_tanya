@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Forum;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -25,7 +26,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::get();
+        return view('halaman.category.tambah', [
+            'forum' => $categories
+        ]);
     }
 
     /**
@@ -36,7 +40,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validated = $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        Category::create($validated);
+        return redirect('/category');
     }
 
     /**
@@ -47,7 +58,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        $categories = $category;
+        return view('halaman.category.detail', ['categories' => $categories]);
     }
 
     /**
