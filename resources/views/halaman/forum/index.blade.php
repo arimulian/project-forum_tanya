@@ -53,7 +53,7 @@ Halaman Forum
                          <div class="my-2">
                               <p class="card-text text-end"><small class="text-muted">Created at {{ $item->created_at }} </small></p>
                               <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" width="30" height="30" class="rounded-circle border float-end mx-2">
-                              <p class="card-text text-end"><a class="text-decoration-none" href="#">Username</a></p>
+                              <p class="card-text text-end"><a class="text-decoration-none" href="#">{{ auth()->user()->username}}</a></p>
                          </div>
                     </div>
 

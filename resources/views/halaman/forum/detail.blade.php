@@ -38,13 +38,18 @@ Halaman Forum
                </div>
 
                <hr>
+               <h5>Bantu Jawab</h5>
                @foreach ($forums as $item)
                @foreach ($item->answer->where('question_id', $item->id) as $data)
                <div class="card mb-3">
                   <div class="card">
                       <h5 class="card-title mx-2">{{ $data->username }}</h5>
                       <p class="card-text mx-3">{{ $data->answer_text }}</p>
-                      <p class="card-text mx-3 mb-3"><small class="text-muted">{{ $data->created_at }}</small></p>
+                         <div class="my-2">
+                              <p class="card-text text-end"><small class="text-muted">Created at {{ $item->created_at }} </small></p>
+                              <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" width="30" height="30" class="rounded-circle border float-end mx-2">
+                              <p class="card-text text-end"><a class="text-decoration-none" href="#">{{ auth()->user()->username}}</a></p>
+                         </div>
                     </div>
                   </div>
                @endforeach
