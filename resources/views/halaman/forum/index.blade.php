@@ -44,11 +44,11 @@ Halaman Forum
                     <div class="card-body">
                          <h4 class="card-title my-4">{{ $item->question }}</h4>
                          <p class="card-text my-3">{!! $item->description !!}
-                              <a href="/forum/{{ $item->id }}" class="align-center badge bg-light text-dark bg-gradient shadow-sm rounded">Readmore...</a>
+                              <a href="/forum/{{$item->id}}" class="align-center badge bg-light text-dark bg-gradient shadow-sm rounded">Readmore...</a>
                          </p>
 
                          <h5>
-                              <a href="/category/{{$item->id}}"><span class="badge bg-info shadow bg-gradient">{{ $item->category->name }}</span></a>
+                              <a href="/category/{{$item->category->id}}"><span class="badge bg-info shadow bg-gradient">{{ $item->category->name }}</span></a>
                          </h5>
                          <div class="my-2">
                               <p class="card-text text-end"><small class="text-muted">Created at {{ $item->created_at }} </small></p>

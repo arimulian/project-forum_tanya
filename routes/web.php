@@ -38,6 +38,7 @@ Route::get("/edit-profile/{id}", [ProfilController::class, 'editprofile']);
 
 // CRUD Forum
 Route::resource('/forum', ForumController::class);
+Route::get('/forum/{id}', [ForumController::class, 'show']);
 // CRUD Forum_Category
 Route::resource('/category', CategoryController::class);
 

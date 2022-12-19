@@ -12,7 +12,7 @@ class AnswerController extends Controller
     {
         $userID = Auth::id();
         Answer::create([
-            'answerText' => $request['answerText'],
+            'answer_text' => $request['answer_text'],
             'user_id' => $userID,
             'question_id' => $id
         ]);
