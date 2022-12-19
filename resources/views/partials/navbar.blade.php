@@ -27,7 +27,9 @@
                                 <button type="submit" class="dropdown-item text-dark"><i class="bi bi-box-arrow-left"></i>&nbspLog Out</button>
                             </form>
                         </li>
+                        <li><a class="dropdown-item" href="/add-profile"><img src="https://img.icons8.com/sf-regular/48/null/pencil.png" width="20px"/>Buat Profile</a></li>
                         <li><a class="dropdown-item" href="/profile">Profile</a></li>
+
                     </ul>
                 </div>
                 @else

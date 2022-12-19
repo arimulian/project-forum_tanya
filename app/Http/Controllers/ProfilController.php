@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProfilController extends Controller
 {
     public function profile(){
-        $profile = DB::table('profil')->latest('id');
+        $profile = Profile::all();
         return view('profile.profile',compact('profile'));
     }
     public function create(){
@@ -43,4 +43,13 @@ class ProfilController extends Controller
         $newProfile->save();
         return redirect('/profile'); 
     }
+    public function editprofile($id){
+            $profile = Profile::find($id);
+            return view('profile.edit',compact('profile'));
+    }  public function editing(Request $request, $id){
+        $profile =Profile::find($id);
+        $profile ->update($request->all());
+ 
+        return redirect()->intended('/profile');
+     }
 }
