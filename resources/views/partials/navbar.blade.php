@@ -7,7 +7,6 @@
                 </svg>
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
                 <li><a href="#" class="nav-link px-2 text-secondary">About</a></li>
                 <li><a href="/forum" class="nav-link px-2 text-secondary">Forum</a></li>
             </ul>
@@ -30,7 +29,7 @@
                               <button type="submit" class="dropdown-item text-dark"><i class="bi bi-box-arrow-left"></i>&nbspLog Out</button> 
                          </form>
                         </li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
                     </ul>
                 </div>
                 @else

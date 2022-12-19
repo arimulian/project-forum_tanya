@@ -39,7 +39,6 @@
                     <trix-editor input="description"></trix-editor>
                </div>
                <div class="form-group my-3">
-<<<<<<< HEAD
                     <div class="form-check">
                          <label > 
                              Kategori :
@@ -67,18 +66,6 @@
                          Configuration
                          </label>
                        </div>
-=======
-                    <label class="mb-2" for="category">Tags</label>
-                    <select class="form-select " name="category_id">
-                         @foreach ($categories as $item)
-                         @if (old('category_id') == $item->id)
-                         <option value="{{ $item->id }}" selected>{{ $item->name }}</option>
-                         @else
-                         <option value="{{ $item->id }}">{{ $item->name }}</option>
-                         @endif
-                         @endforeach
-                    </select>
->>>>>>> 867f9705fe45eec0e5b07c885e5d4e65709182ea
                </div>
                <div class="form-group my-3">
                     <label class="mb-2" for="description">Image</label>
