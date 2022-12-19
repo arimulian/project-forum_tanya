@@ -39,35 +39,6 @@
                     <trix-editor input="description"></trix-editor>
                </div>
                <div class="form-group my-3">
-<<<<<<< HEAD
-                    <div class="form-check">
-                         <label > 
-                             Kategori :
-                            </label><br>
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault1">
-                         <label class="form-check-label" for="flexRadioDefault1">
-                          Programing
-                         </label>
-                       </div>
-                       <div class="form-check">
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault2" checked>
-                         <label class="form-check-label" for="flexRadioDefault2">
-                         Data Science
-                         </label>
-                       </div>
-                       <div class="form-check">
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault2" checked>
-                         <label class="form-check-label" for="flexRadioDefault2">
-                         Database
-                         </label>
-                       </div>
-                       <div class="form-check">
-                         <input class="form-check-input" type="radio" name="kategory" id="flexRadioDefault2" checked>
-                         <label class="form-check-label" for="flexRadioDefault2">
-                         Configuration
-                         </label>
-                       </div>
-=======
                     <label class="mb-2" for="category">Tags</label>
                     <select class="form-select " name="category_id">
                          @foreach ($categories as $item)
@@ -78,7 +49,6 @@
                          @endif
                          @endforeach
                     </select>
->>>>>>> bb7278e43e0b3b172e93b2acb4f9bf12e89d4d39
                </div>
                <div class="form-group my-3">
                     <label class="mb-2" for="description">Image</label>
