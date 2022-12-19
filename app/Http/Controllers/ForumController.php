@@ -74,7 +74,7 @@ class ForumController extends Controller
     public function show(Forum $forum)
     {
         $forum = Forum::find($forum);
-        return view('halaman.forum.detail', ['forum' => $forum]);
+        return view('halaman.forum.detail', ['forums' => $forum]);
     }
 
     /**

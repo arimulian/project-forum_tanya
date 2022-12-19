@@ -36,6 +36,7 @@ Route::POST('/add-profile', [ProfilController::class, 'store']);
 
 // CRUD Forum
 Route::resource('/forum', ForumController::class);
+Route::get('/forum/{id}', [ForumController::class, 'show']);
 // CRUD Forum_Category
 Route::resource('/category', CategoryController::class);
 

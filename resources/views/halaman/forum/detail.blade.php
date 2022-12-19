@@ -19,7 +19,7 @@ Halaman Forum
                </ul>
           </div>
           <div class="col-8 my-5">
-               @foreach ($forum as $item)
+               @foreach ($forums as $item)
                <div class="my-5">
                     <div class="media-body">
                          <h3 class="text-start">{{ $item->question }}</h3>
@@ -36,17 +36,27 @@ Halaman Forum
 
                     @endif
                </div>
-               {{-- ini error trus lae. Aku bingung cara nampilin datanya yang udh relasi. 
-                    filenya di forum.detail--}}
+
                <hr>
-                    <p>{{ $item->answerText}}</p>
+               @foreach ($forums as $item)
+               @foreach ($item->answer->where('question_id', $item->id) as $data)
+               <div class="card mb-3">
+                  <div class="card">
+                      <h5 class="card-title mx-2">{{ $data->username }}</h5>
+                      <p class="card-text mx-3">{{ $data->answer_text }}</p>
+                      <p class="card-text mx-3 mb-3"><small class="text-muted">{{ $data->created_at }}</small></p>
+                    </div>
+                  </div>
+               @endforeach
+               @endforeach
+
                <hr>
-               {{-- ///////////////// --}}
+
                <form action="/answer/{{ $item->id }}" method="post">
                     @method('post')
                     @csrf
                     <div class="form-floating">
-                         <textarea class="form-control" name="answerText" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                         <textarea class="form-control" name="answer_text" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                          <label for="floatingTextarea2">Bantu Jawab</label>
                          <button type="submit" class="btn btn-primary btn-sm my-4">Primary</button>
                     </div>
