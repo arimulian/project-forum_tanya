@@ -20,13 +20,13 @@
 <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
     <header class="max-w-lg mx-auto">
         <a href="#">
-            <h1 class="text-4xl font-bold text-white text-center">Startup</h1>
+            <h1 class="text-4xl font-bold text-white text-center">OutofStack </h1>
         </a>
     </header>
 
     <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
-            <h3 class="font-bold text-2xl">Welcome to Startup</h3>
+            <h3 class="font-bold text-2xl">Welcome to OutofStack</h3>
             <p class="text-gray-600 pt-2">Create your account.</p>
         </section>
 
@@ -54,7 +54,7 @@
     </main>
 
     <div class="max-w-lg mx-auto text-center mt-12 mb-6">
-        <p class="text-white"> have an account? <a href="/login" class="font-bold hover:underline">Login</a>.</p>
+        <p class="text-white"> have an account? <a href="/" class="font-bold hover:underline">Login</a>.</p>
     </div>
 
     <footer class="max-w-lg mx-auto flex justify-center text-white">

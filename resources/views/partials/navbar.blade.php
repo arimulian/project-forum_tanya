@@ -33,7 +33,7 @@
                     </ul>
                 </div>
                 @else
-                <button type="button" class="btn btn-outline-warning me-2"><a href="/login" style="color:black;text-decoration:none;"> Login</a></button>
+                <button type="button" class="btn btn-outline-warning me-2"><a href="/" style="color:black;text-decoration:none;"> Login</a></button>
                 <button type="button" class="btn btn-warning"><a href="/register" style="color:black;text-decoration:none;"> Sign-up </a></button>
                 @endauth
             </div>
