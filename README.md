@@ -1,5 +1,19 @@
 # Proyek Forum
 
+-Kelompok 10
+
+-Anggota Kelompok
+1. Edward Tua Panjaitan
+2. Ari Muliansyah Manurung
+
+-Tema Project
+Forum Tanya Jawab
+
+- Link Video
+-> link demo aplikasi : https://youtu.be/xsOsSBlQjWQ
+->link deploy         : 
+
+
 
 
 ## Getting started
