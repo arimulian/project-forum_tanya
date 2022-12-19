@@ -26,7 +26,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::get();
+        return view('halaman.category.tambah', [
+            'forum' => $categories
+        ]);
     }
 
     /**
@@ -37,6 +40,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validated = $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        Category::create($validated);
+        return redirect('/category');
     }
 
     /**

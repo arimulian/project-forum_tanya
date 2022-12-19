@@ -53,9 +53,13 @@
                <div class="form-group my-3">
                     <label class="mb-2" for="description">Image</label>
                     <div class="input-group mb-3">
-                         <label class="input-group-text" for="inputGroupFile01">Upload</label>
-                         <input type="file" name="image" class="form-control" id="inputGroupFile01">
+                         <input type="file" name="image" class="form-control  @error('image') is-invalid @enderror" id="image">
                     </div>
+                    @error('image')
+                    <div class="invalid-feedback">
+                         {{ $message }}
+                    </div>
+                    @enderror
                </div>
                <button type="submit" class="btn btn-primary mt-4">Submit</button>
                <a href="/forum" class="btn btn-danger mt-4">Back</a>

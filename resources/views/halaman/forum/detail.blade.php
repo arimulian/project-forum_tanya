@@ -20,15 +20,34 @@ Halaman Forum
           </div>
           <div class="col-8 my-5">
                @foreach ($forum as $item)
-               <div class="media my-5">
-                    <!-- {{-- <img src="..." class="mr-3" alt="..."> --}} -->
+               <div class="my-5">
                     <div class="media-body">
                          <h3 class="text-start">{{ $item->question }}</h3>
-                         <p class="text-start">{!! $item->description !!}</p>
                     </div>
+                    <div class="card mb-3">
+                         <div class="card-body">
+                              <p class="card-text">{!! $item->description !!}</p>
+
+                         </div>
+                         @if ($item->image)
+                         <img src="{{ asset('storage/' . $item->image) }}" class="img-fluid">
+                    </div>
+                    @else
+
+                    @endif
                </div>
+               <hr>
+
+               @endforeach
+               <form action="" method="post">
+                    <div class="form-floating">
+                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                         <label for="floatingTextarea2">Bantu Jawab</label>
+                         <button type="submit" class="btn btn-primary btn-sm my-4">Primary</button>
+                    </div>
+               </form>
           </div>
-          @endforeach
+
      </div>
 </div>
 </div>
