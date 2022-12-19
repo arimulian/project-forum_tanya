@@ -19,7 +19,7 @@
 <div class="container">
      <h3 class="my-5">Buat Pertanyaan Kepada Publik</h3>
      <div class="my-4">
-          <form action="{{ route('forum.store') }}" method="post" enctype="multipart/form-data">
+          <form action="{{ route('forum.store') }}" method="POST" enctype="multipart/form-data">
                @csrf
                <div class="form-group">
                     <label class="mb-2" for="question">Pertanyaan</label>
@@ -39,7 +39,6 @@
                     <trix-editor input="description"></trix-editor>
                </div>
                <div class="form-group my-3">
-<<<<<<< HEAD
                     <div class="form-check">
                          <label > 
                              Kategori :
@@ -67,32 +66,16 @@
                          Configuration
                          </label>
                        </div>
-=======
-                    <label class="mb-2" for="category">Tags</label>
-                    <select class="form-select " name="category_id">
-                         @foreach ($categories as $item)
-                         @if (old('category_id') == $item->id)
-                         <option value="{{ $item->id }}" selected>{{ $item->name }}</option>
-                         @else
-                         <option value="{{ $item->id }}">{{ $item->name }}</option>
-                         @endif
-                         @endforeach
-                    </select>
->>>>>>> bb7278e43e0b3b172e93b2acb4f9bf12e89d4d39
                </div>
                <div class="form-group my-3">
                     <label class="mb-2" for="description">Image</label>
                     <div class="input-group mb-3">
-                         <input type="file" name="image" class="form-control  @error('image') is-invalid @enderror" id="image">
+                         <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                         <input type="file" name="image" class="form-control" id="inputGroupFile01">
                     </div>
-                    @error('image')
-                    <div class="invalid-feedback">
-                         {{ $message }}
-                    </div>
-                    @enderror
                </div>
                <button type="submit" class="btn btn-primary mt-4">Submit</button>
-               <a href="/forum" class="btn btn-danger mt-4">Back</a>
+               <a href="/post" class="btn btn-danger mt-4">Back</a>
           </form>
      </div>
 </div>
