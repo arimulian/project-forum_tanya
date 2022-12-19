@@ -33,6 +33,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/profile', [ProfilController::class, 'profile']);
 Route::GET('/add-profile', [ProfilController::class, 'create']);
 Route::POST('/add-profile', [ProfilController::class, 'store']);
+Route::get("/edit-profile/{id}", [ProfilController::class, 'editprofile']);
+
 
 // CRUD Forum
 Route::resource('/forum', ForumController::class);
