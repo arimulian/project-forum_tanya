@@ -19,12 +19,9 @@ use App\Http\Controllers\ProfilController;
 */
 
 
-Route::get('/', function () {
-    return view('layouts.main');
-});
 
-Route::get('/login', [LoginController::class, 'login']);
-Route::post('/login', [LoginController::class, 'auth']);
+Route::get('/', [LoginController::class, 'login']);
+Route::post('/', [LoginController::class, 'auth']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'store']);
