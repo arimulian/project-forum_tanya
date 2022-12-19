@@ -34,7 +34,7 @@ Route::get('/profile', [ProfilController::class, 'profile']);
 Route::GET('/add-profile', [ProfilController::class, 'create']);
 Route::POST('/add-profile', [ProfilController::class, 'store']);
 Route::get("/edit-profile/{id}", [ProfilController::class, 'editprofile']);
-Route::post('/edit-profile/{id}',[ProfilController::class, 'editing']);
+Route::post('/edit-profile/{id}', [ProfilController::class, 'editing']);
 
 // CRUD Forum
 Route::resource('/forum', ForumController::class);
