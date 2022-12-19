@@ -267,17 +267,17 @@
             <div class="jarak" style="padding-left:40px;padding-top:20px">
             <div class="card" style="width: 18rem;justify-content:center   ">
                 <div class="card-body">
-                 <img src="bg1.jpeg" width="200px" style="border-radius:100px">
+                 <img src="{{  url('asset/profile/'.$profile->image) }}" width="200px" style="border-radius:100px">
                  <p style="text-align: center">id </p>
                  <br><br> 
-                  <a href="/add-profile" class="btn btn-primary" style="margin-left:39px"><img src="https://img.icons8.com/sf-regular/48/null/pencil.png" width="20px"/>&nbsp edit profil</a>
+                  <a href="/add-profile" class="btn btn-primary" style="margin-left:39px"><img src="https://img.icons8.com/sf-regular/48/null/pencil.png" width="20px"/>&nbsp tambah profil</a>
                 </div>
               </div><br>    
               <div class="card" style="width: 38rem;" >
                 <ul class="list-group list-group-light">
-                  <li class="list-group-item px-3">Bio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</li>
-                  <li class="list-group-item px-3">Email &nbsp; :</li>
-                  <li class="list-group-item px-3">Skill &nbsp;&nbsp;&nbsp;&nbsp; :</li>
+                <li class="list-group-item px-3">Bio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :{{$profile->bio}} </li>
+                  <li class="list-group-item px-3">Email &nbsp; : {{$profile->alamat}}</li>
+                  <li class="list-group-item px-3">Skill &nbsp;&nbsp;&nbsp;&nbsp; : {{$profile->skill}}</li>
                 </ul>
               </div><br><br>
             </div>
