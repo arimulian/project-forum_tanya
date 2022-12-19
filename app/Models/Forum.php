@@ -15,4 +15,13 @@ class Forum extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    // public function answer()
+    // {
+    //     return $this->morphMany(User::class, 'answer');
+    // }
+    public function answer()
+    {
+        return $this->hasMany(Answer::class, 'question_id');
+    }
 }

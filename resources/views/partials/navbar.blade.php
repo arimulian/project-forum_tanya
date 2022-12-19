@@ -12,12 +12,10 @@
             </ul>
             <div class="text-end">
                 @auth
-                <img src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/null/external-account-essential-ui-v4-creatype-outline-colourcreatype.png"
-                    height="30px" style="margin-right:70px" />
+                <img src="https://img.icons8.com/external-creatype-outline-colourcreatype/64/null/external-account-essential-ui-v4-creatype-outline-colourcreatype.png" height="30px" style="margin-right:70px" />
 
                 <div class="dropdown-center">
-                    <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         welcome,{{ auth()->user()->username }}
 
                     </button>
@@ -25,18 +23,16 @@
 
                         <li>
                             <form action="/logout" method="post">
-                              @csrf
-                              <button type="submit" class="dropdown-item text-dark"><i class="bi bi-box-arrow-left"></i>&nbspLog Out</button> 
-                         </form>
+                                @csrf
+                                <button type="submit" class="dropdown-item text-dark"><i class="bi bi-box-arrow-left"></i>&nbspLog Out</button>
+                            </form>
                         </li>
                         <li><a class="dropdown-item" href="/profile">Profile</a></li>
                     </ul>
                 </div>
                 @else
-                <button type="button" class="btn btn-outline-warning me-2"><a href="/login"
-                        style="color:black;text-decoration:none;"> Login</a></button>
-                <button type="button" class="btn btn-warning"><a href="/register"
-                        style="color:black;text-decoration:none;"> Sign-up </a></button>
+                <button type="button" class="btn btn-outline-warning me-2"><a href="/login" style="color:black;text-decoration:none;"> Login</a></button>
+                <button type="button" class="btn btn-warning"><a href="/register" style="color:black;text-decoration:none;"> Sign-up </a></button>
                 @endauth
             </div>
         </div>
