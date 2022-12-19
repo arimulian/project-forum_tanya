@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProfilController extends Controller
 {
     public function profile(){
-        $profile = DB::table('profil')->get();
+        $profile = DB::table('profil')->latest('id');
         return view('profile.profile',compact('profile'));
     }
     public function create(){
