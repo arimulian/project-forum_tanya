@@ -57,7 +57,7 @@ class ForumController extends Controller
         $forum = new Forum;
         $forum->question = $request->question;
         $forum->description = $request->description;
-        $forum->image = $request->image = $validatedData;
+        $forum->image = $request->image ? $validatedData : null;
         $forum->category_id = $request->category_id;
         $forum->user_id = $request->user_id = auth()->user()->id;
         $forum->save();

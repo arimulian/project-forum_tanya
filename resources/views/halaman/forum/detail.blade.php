@@ -37,15 +37,17 @@ Halaman Forum
                     @endif
                </div>
                <hr>
-
-               @endforeach
-               <form action="" method="post">
+               <form action="/answer" method="post">
+                    @method('post')
+                    @csrf
                     <div class="form-floating">
-                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                         <textarea class="form-control" name="answer_text" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                          <label for="floatingTextarea2">Bantu Jawab</label>
                          <button type="submit" class="btn btn-primary btn-sm my-4">Primary</button>
                     </div>
                </form>
+
+               @endforeach
           </div>
 
      </div>
