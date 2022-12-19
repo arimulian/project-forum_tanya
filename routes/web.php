@@ -16,8 +16,8 @@ use App\Http\Controllers\ProfilController;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
 */
+
 
 Route::get('/', function () {
     return view('layouts.main');
@@ -31,7 +31,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 //proofile
 Route::get('/profile',[ProfilController::class, 'profile']);
-Route::get('/add-profile',[ProfilController::class,'add']);
+Route::GET('/add-profile',[ProfilController::class,'create']);
+Route::POST('/add-profile',[ProfilController::class, 'store']);
 
 // CRUD Forum
 Route::resource('/forum', ForumController::class);
@@ -39,3 +40,5 @@ Route::resource('/forum', ForumController::class);
 Route::resource('/category', CategoryController::class);
 
 Route::post('/answer', [AnswerController::class, 'store']);
+
+
