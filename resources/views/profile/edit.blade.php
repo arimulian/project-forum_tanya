@@ -24,7 +24,7 @@
             </div>
             <div class="card-body">
 
-                <form action="url('/edit-profile/'{{$profile->id}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('/edit-profile/'.$profile->id) }}" method="POST" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     {{-- @method("PATCH") --}}
                     <div class="form-outline mb-4">
@@ -34,7 +34,7 @@
                         <label class="form-label" for="form4Example1">Nama</label>
                     </div>
                     <div class="form-outline mb-4">
-                        <textarea class="form-control" name="bio" id="form4Example3" rows="4" value="{{$profile->bio}}"></textarea>
+                        <input type="text" name="bio" class="form-control" id="form4Example3" rows="4" value="{{$profile->bio}}" style="height:4cm"/>
                         <label class="form-label" for="form4Example1">Biodata</label>
                     </div>
 

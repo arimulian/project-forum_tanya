@@ -46,7 +46,11 @@ class ProfilController extends Controller
     public function editprofile($id){
             $profile = Profile::find($id);
             return view('profile.edit',compact('profile'));
-    }  public function editing(Request $request, $id){
+    }  
+    
+    
+    
+    public function editing(Request $request, $id){
         $profile =Profile::find($id);
         $profile ->update($request->all());
  
