@@ -12,7 +12,7 @@ Forum Tanya Jawab
 
 -   Link Video
     -> link demo aplikasi : https://youtu.be/xsOsSBlQjWQ
-    ->link deploy : https://forumtanya.000webhostapp.com/
+    ->link deploy : https://forumtanya.sanbercodeapp.com/
 
 ## Getting started
 
